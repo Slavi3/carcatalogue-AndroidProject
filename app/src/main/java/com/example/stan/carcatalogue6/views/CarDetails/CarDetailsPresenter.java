@@ -1,0 +1,50 @@
+package com.example.stan.carcatalogue6.views.CarDetails;
+
+import com.example.stan.carcatalogue5.CarsList.async.AsyncRunner;
+import com.example.stan.carcatalogue5.CarsList.models.Car;
+import com.example.stan.carcatalogue5.CarsList.services.base.CarsService;
+import com.example.stan.carcatalogue6.models.Car;
+
+import java.io.IOException;
+
+public class CarDetailsPresenter
+        implements CarDetailsContracts.Presenter {
+        private final CarsService mCarsService;
+        private final AsyncRunner mAsyncRunner;
+        private CarDetailsContracts.View mView;
+        private int mCarId;
+
+    public CarDetailsPresenter(
+                CarsService carsService,
+                AsyncRunner asyncRunner
+        ) {
+            mCarsService = carsService;
+            mAsyncRunner = asyncRunner;
+        }
+
+        @Override
+        public void subscribe(CarDetailsContracts.View view) {
+            mView = view;
+        }
+
+        @Override
+        public void loadCar() {
+            mView.showLoading();
+            mAsyncRunner.runInBackground(() -> {
+                try {
+                    Car car = mCarsService.getDetailsById(mCarId);
+                    mView.showCar(car);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    mView.showError(e);
+                }
+
+                mView.hideLoading();
+            });
+        }
+
+        public void setCarId(int carId) {
+            mCarId = carId;
+        }
+    }
+
