@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.example.stan.carcatalogue6.models.Car;
 
 import com.example.stan.carcatalogue6.R;
+import com.example.stan.carcatalogue6.services.base.CarsService;
 
 
 public class CarDetailsActivity extends Activity {

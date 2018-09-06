@@ -1,9 +1,7 @@
 package com.example.stan.carcatalogue6.views.CarDetails;
-
-import com.example.stan.carcatalogue5.CarsList.async.AsyncRunner;
-import com.example.stan.carcatalogue5.CarsList.models.Car;
-import com.example.stan.carcatalogue5.CarsList.services.base.CarsService;
+import com.example.stan.carcatalogue6.async.AsyncRunner;
 import com.example.stan.carcatalogue6.models.Car;
+import com.example.stan.carcatalogue6.services.base.CarsService;
 
 import java.io.IOException;
 
