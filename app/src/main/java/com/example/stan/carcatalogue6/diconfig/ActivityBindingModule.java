@@ -7,9 +7,9 @@ import dagger.android.ContributesAndroidInjector;
 
 @Module
 public abstract class ActivityBindingModule {
-    @ActivityScoped
+    //@ActivityScoped
     @ContributesAndroidInjector(
-            modules = CarsListModule.class
+            //modules = CarsListModule.class
     )
     abstract CarsListActivity carsListActivity();
 }

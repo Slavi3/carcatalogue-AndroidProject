@@ -1,9 +1,9 @@
 package com.example.stan.carcatalogue6.repositories;
 
 
-import com.example.stan.carcatalogue5.CarsList.http.HttpRequester;
-import com.example.stan.carcatalogue5.CarsList.parsers.base.JsonParser;
-import com.example.stan.carcatalogue5.CarsList.repositories.base.Repository;
+import com.example.stan.carcatalogue6.http.HttpRequester;
+import com.example.stan.carcatalogue6.parsers.base.JsonParser;
+import com.example.stan.carcatalogue6.repositories.base.Repository;
 
 import java.io.IOException;
 import java.util.List;
