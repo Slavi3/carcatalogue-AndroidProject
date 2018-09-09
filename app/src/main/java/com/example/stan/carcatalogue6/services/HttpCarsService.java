@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HttpCarsService implements CarsService {
-    private final Repository<Car> mSuperheroesRepository;
+    private final Repository<Car> mCarsRepository;
 
     public HttpCarsService(Repository<Car> superheroesRepository) {
-        mSuperheroesRepository = superheroesRepository;
+        mCarsRepository = superheroesRepository;
     }
 
     @Override
     public List<Car> getAllCars() throws IOException {
-        return mSuperheroesRepository.getAll();
+        return mCarsRepository.getAll();
     }
 
     @Override
     public Car getDetailsById(int id) throws IOException {
-        return mSuperheroesRepository.getById(id);
+        return mCarsRepository.getById(id);
     }
 
     @Override
